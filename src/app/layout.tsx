@@ -1,3 +1,5 @@
+import { Frame } from '@src/cmp/Frame'
+import Link from 'next/link'
 import './globals.css'
 
 export const metadata = {
@@ -12,7 +14,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="flex items-center h-20">
+          <Link href="/" className="mx-auto">
+            <Frame button>1</Frame>
+          </Link>
+          <Link href="2" className="mx-auto">
+            <Frame button>2</Frame>
+          </Link>
+          <Link href="3" className="mx-auto">
+            <Frame button>3</Frame>
+          </Link>
+          <Link href="4" className="mx-auto">
+            <Frame button>4</Frame>
+          </Link>
+        </div>
+        <main className="min-h-[calc(100vh-80px)] flex justify-center flex-col gap-4 md:gap-8 px-4">
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
